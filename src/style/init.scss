@@ -1,0 +1,207 @@
+@import "sanitize.css/sanitize.css";
+@import "sanitize.css/typography.css";
+@import "materialize-css/sass/components/color-variables";
+
+/* START Variables used in the CSS */
+$off-black: rgba(0, 0, 0, 0.87) !default;
+
+$primary-color: color("light-blue", "base");
+$primary-text: $off-black;
+
+$anchor-color: color("blue-grey", "darken-1");
+$card-action-color: color("orange", "darken-1");
+
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+$gutter-small: 16px;
+$gutter-medium: 24px;
+/* END Variables used in the CSS */
+
+@import "mixins";
+
+body {
+	line-height: 1.45;
+	background-color: color("grey", "lighten-5");
+	background-image: url("https://www.transparenttextures.com/patterns/cream-pixels.png");
+
+	@media only screen and (min-width: 0) {
+		font-size: 14px;
+	}
+
+	@media only screen and (min-width: $medium-screen) {
+		font-size: 14.5px;
+	}
+
+	@media only screen and (min-width: $large-screen) {
+		font-size: 15px;
+	}
+
+	font-weight: normal;
+	color: $off-black;
+}
+
+a {
+	color: $anchor-color;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// .btn {
+// 	text-decoration: none;
+// 	color: #fff;
+// 	background-color: color("orange", "darken-2");
+// 	text-align: center;
+// 	letter-spacing: 0.5px;
+// 	transition: background-color 0.2s ease-out;
+// 	cursor: pointer;
+// 	padding: 1rem;
+// 	display: inline-block;
+// 	border-radius: 3px;
+// 	@include zdepth($level: 1);
+// 	@include gutterize("margin-right", "margin-left");
+
+// 	&:hover {
+// 		background-color: color("orange", "darken-3");
+// 		@include zdepth($level: 1.5);
+// 	}
+// }
+
+// https://type-scale.com/ - minor third
+
+p {
+	margin-bottom: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: 400;
+	line-height: 1.15;
+	@include gutterize("margin-bottom");
+}
+
+h1 {
+	font-size: 2.488em;
+}
+
+h2 {
+	font-size: 2.074em;
+}
+
+h3 {
+	font-size: 1.728em;
+}
+
+h4 {
+	font-size: 1.44em;
+}
+
+h5 {
+	font-size: 1.2em;
+}
+
+small,
+.text_small {
+	font-size: 0.833em;
+}
+// END https://type-scale.com/ - minor third
+
+$header-height: 56px;
+.header {
+	height: $header-height;
+	display: flex;
+	border-bottom: solid 2px $primary-color;
+	background-color: #fff;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+	top: 0;
+
+	.title {
+		margin: auto 1rem;
+		font-size: 1.5rem;
+		color: $primary-text;
+	}
+
+	ul.menu {
+		display: none;
+		list-style: none;
+
+		@media #{$medium-and-up} {
+			display: block;
+		}
+
+		li {
+			float: left;
+			@include gutterize("margin-right");
+
+			a {
+				color: $off-black;
+			}
+		}
+	}
+}
+
+.main {
+	margin-bottom: 1rem;
+	margin-top: $header-height;
+	min-height: 80vh;
+}
+
+.section {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	@include gutterize("padding-top", "padding-left", "padding-right", "margin-top", "margin-bottom");
+
+	@media #{$large-and-up} {
+		margin: 0 auto;
+		width: 1024px;
+	}
+}
+
+.card {
+	position: relative;
+	@include gutterize("padding-top", "padding-bottom", "margin-top", "margin-bottom");
+	background-color: #fff;
+	border-radius: 2px;
+	@include zdepth($level: 1.5);
+
+	p {
+		@include gutterize("padding-left", "padding-right");
+	}
+
+	.title {
+		font-size: 1.5rem;
+		margin: 0;
+	}
+
+	.actions {
+		border-top: solid 1px color("grey", "lighten-2");
+		display: flex;
+		justify-content: flex-end;
+		@include gutterize("padding-left", "padding-top", "padding-right");
+
+		a {
+			text-transform: uppercase;
+			color: $card-action-color;
+		}
+	}
+}

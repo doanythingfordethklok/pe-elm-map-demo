@@ -1,0 +1,25 @@
+@import "init";
+
+.home {
+	flex-direction: column;
+
+	@media #{$medium-and-up} {
+		flex-direction: row;
+
+		.card {
+			width: 50%;
+			@include gutterize("margin-right");
+		}
+	}
+
+	.card {
+		.address {
+			color: color("grey", "base");
+			margin: 0;
+			font-size: 0.8rem;
+		}
+		.cat {
+			color: color("grey", "base");
+		}
+	}
+}
