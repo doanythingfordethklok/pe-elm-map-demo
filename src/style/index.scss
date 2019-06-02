@@ -1,25 +1,56 @@
-@import "init";
+@import "base";
+@import "snackbar";
+
+$details-width: 19rem;
+
+.section {
+	min-height: 80vh;
+	border: solid 1px color("grey", "lighten-2");
+	@include zdepth($level: 1.5);
+	background-color: #fff;
+
+	.details {
+		width: $details-width;
+
+		.item {
+			@include gutterize("margin-bottom", "margin-right", "padding-bottom");
+
+			p {
+				margin: 0;
+			}
+
+			.title {
+				font-size: 1.5rem;
+				margin: 0;
+			}
+
+			.address {
+				color: color("grey", "darken-1");
+				margin: 0;
+				font-size: 0.8rem;
+			}
+			.cat {
+				color: color("grey", "darken-1");
+			}
+		}
+	}
+
+	.map {
+		width: calc(100% - #{$details-width});
+		height: auto;
+		display: inline-block;
+	}
+}
 
 .home {
-	flex-direction: column;
+	.incident_list {
+		height: 100%;
 
-	@media #{$medium-and-up} {
-		flex-direction: row;
-
-		.card {
-			width: 50%;
-			@include gutterize("margin-right");
+		.item {
+			border-bottom: solid 1px color("grey", "lighten-2");
 		}
 	}
+}
 
-	.card {
-		.address {
-			color: color("grey", "base");
-			margin: 0;
-			font-size: 0.8rem;
-		}
-		.cat {
-			color: color("grey", "base");
-		}
-	}
+.incident {
 }
