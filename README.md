@@ -22,6 +22,23 @@ At this time, the following 2 options will update the files
 2. copy the dist folder to you favorite file server or object store.
 3. To enable CORS, the services in this project should be proxied. Looks like Richmond hasn't enabled CORS.
 
+# Questions
+
+### did you complete the project? comment as needed.
+
+I completed the project. The upstream APIs dont support CORS so that is outstanding. I don't have any more personal time available to setup a proxy os that is missing. If you have a proxy handy, the endpoint can be changed in `./src/elm/Api.elm`
+
+### how much time did you spend on the project?
+
+I spent 6h-8h hours randomly interspersed with weekend commitments. The Richmond gis server was down for most of the time I needed it which was a HUGE TIME SUCK b/c it was hard to tell if I was doing something wrong or it was down. After a while of trying to figure out why nothing loaded (web, xhrs, etc), it just showed up and started working. I'd love to have those wasted hours back.
+
+# Screenshots
+
+![](./screenshots/0.png)
+![](./screenshots/1.png)
+
+---
+
 # Background
 
 Enrich 911 emergency incident data to provide better analytics for a fire department.
