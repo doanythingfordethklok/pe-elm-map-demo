@@ -1,7 +1,7 @@
 port module Ports exposing (mapReady, resetMap, showIncident, syncMap, updateViewport)
 
 import Json.Decode as Decode
-import Models exposing (..)
+import Models exposing (Pin, Viewport)
 
 
 port updateViewport : (Decode.Value -> msg) -> Sub msg

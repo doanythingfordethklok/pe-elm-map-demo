@@ -1,8 +1,7 @@
 module Routing exposing (Route(..), fromUrl, toString)
 
-import Parser
 import Url exposing (Url)
-import Url.Builder as UrlBuilder exposing (absolute)
+import Url.Builder exposing (absolute)
 import Url.Parser exposing ((</>), Parser, map, oneOf, parse, s, string, top)
 
 

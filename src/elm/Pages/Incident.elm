@@ -1,10 +1,10 @@
 module Pages.Incident exposing (Model, Msg(..), init, update, view)
 
 import Api
-import Html exposing (..)
-import Html.Attributes exposing (class, href, id)
+import Html exposing (Html, div, p, strong, text)
+import Html.Attributes exposing (class, id)
 import Http
-import Models exposing (..)
+import Models exposing (Incident, Parcel, Pin, Point, Viewport, Weather)
 import Ports
 import Snackbar exposing (Snackbar)
 import Task
@@ -125,14 +125,14 @@ viewParcel parcel =
     div []
         [ div [ class "sep" ] []
         , strong [] [ text "PARCEL STUFF" ]
-        , p [ class "cat" ]
-            [ text "Parcel"
-            ]
+        , p [ class "cat" ] [ text <| "Land Owner: " ++ parcel.owner ]
+        , p [ class "cat" ] [ text <| "Land Value: " ++ String.fromFloat parcel.land_value ]
+        , p [ class "cat" ] [ text <| "Land Sqft: " ++ String.fromFloat parcel.land_sqft ]
         ]
 
 
 view : Model -> Html Msg
-view { incident, viewport, timezone, weather, parcel, snackbar } =
+view { incident, timezone, weather, parcel, snackbar } =
     div [ class "section incident" ]
         [ div [ class "details" ]
             [ div [ class "item" ]

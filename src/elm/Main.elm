@@ -3,11 +3,10 @@ module Main exposing (main)
 import Browser exposing (Document, UrlRequest(..), application)
 import Browser.Navigation as Navigation
 import Decoders exposing (decodeIncident, decodeViewport)
-import Html exposing (Html, a, button, div, h1, i, pre, span, text)
+import Html exposing (Html, a, div, h1, i, pre, span, text)
 import Html.Attributes exposing (class, href, id)
-import Html.Events exposing (onClick)
 import Json.Decode as Decode
-import Models exposing (..)
+import Models exposing (Incident, Viewport)
 import Pages.Home as HomePage
 import Pages.Incident as IncidentPage
 import Ports

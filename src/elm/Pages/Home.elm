@@ -1,8 +1,8 @@
 module Pages.Home exposing (Model, Msg(..), init, update, view)
 
-import Html exposing (..)
+import Html exposing (Html, a, div, p, text)
 import Html.Attributes exposing (class, href, id)
-import Models exposing (..)
+import Models exposing (Incident, Pin, Point, Viewport)
 import Ports
 import Routing
 import Util exposing (incidentCategory, incidentTitle)

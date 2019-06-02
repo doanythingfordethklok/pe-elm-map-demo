@@ -1,9 +1,9 @@
 module Api exposing (parcel, weather)
 
-import Decoders exposing (..)
+import Decoders exposing (decodeParcel, decodeWeather)
 import Http
 import Json.Encode as Encode
-import Models exposing (..)
+import Models exposing (Incident, Parcel, Weather)
 import Time exposing (posixToMillis)
 import Url.Builder exposing (crossOrigin, int, string)
 
@@ -50,12 +50,12 @@ parcel : Incident -> (Result Http.Error (List Parcel) -> msg) -> Cmd msg
 parcel incident msg =
     Http.request
         { method = "GET"
-        , headers = [ Http.header "Content-Type" "application/x-www-form-urlencoded", Http.header "Accept" "application/json" ]
+        , headers = []
         , url =
             crossOrigin
                 "http://gis.richmondgov.com/ArcGIS/rest/services/StatePlane4502/Ener/MapServer/0/query"
                 []
-                [ string "f" "pjson"
+                [ string "f" "json"
                 , string "geometryType" "esriGeometryPoint"
                 , string "geometry" (encodeGeometry incident.address.latitude incident.address.longitude)
                 , string "outFields" "OwnerName,MailAddress,LandValue,LandSqFt"

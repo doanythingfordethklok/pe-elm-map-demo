@@ -1,7 +1,7 @@
 module Util exposing (errorToString, formatDate, incidentCategory, incidentTitle)
 
 import Http exposing (Error(..))
-import Models exposing (..)
+import Models exposing (Incident)
 import Time exposing (Month(..), Posix, Zone, toDay, toHour, toMinute, toMonth, toYear)
 
 

@@ -3,7 +3,7 @@ module Decoders exposing (decodeIncident, decodeParcel, decodeViewport, decodeWe
 import Iso8601
 import Json.Decode exposing (Decoder, at, float, int, list, map2, string, succeed)
 import Json.Decode.Pipeline exposing (required)
-import Models exposing (..)
+import Models exposing (Address, Description, Incident, Parcel, Point, Viewport, Weather)
 
 
 decodeIncident : Decoder Incident
