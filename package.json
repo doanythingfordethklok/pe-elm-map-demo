@@ -5,7 +5,7 @@
 		"materialize-css": "^1.0.0",
 		"node-elm-compiler": "^5.0.3",
 		"sanitize.css": "^9.0.0",
-		"sass": "^1.20.3"
+		"sass": "^1.22.9"
 	},
 	"main": "index.js",
 	"name": "recruiting-fullstack-incidents-master",
